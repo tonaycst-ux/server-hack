@@ -1,5 +1,6 @@
 const http=require('http');
 const server=http.createServer();
+require("dotenv").config();
 const {Server} =require('socket.io');
 
 const io=new Server(server,()=>{
@@ -15,4 +16,5 @@ io.on("connection",(socket)=>{
 
 server.listen(process.env.port||3000,()=>{
     console.log("Server Started");
+
 });
