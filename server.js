@@ -13,7 +13,7 @@ io.on("connection", (socket) => {
 
   socket.on("message", (msg) => {
     console.log("Received:", msg);
-    io.emit("message", msg); // broadcast
+  socket.broadcast.emit("message", msg); // broadcast
   });
 });
 
@@ -21,3 +21,4 @@ const PORT = process.env.PORT || 3000;   // ✅ use env PORT
 server.listen(PORT, "0.0.0.0", () => {   // ✅ bind to 0.0.0.0
   console.log(`Server started on port ${PORT}`);
 });
+
